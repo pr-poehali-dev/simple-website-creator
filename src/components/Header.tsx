@@ -1,21 +1,38 @@
 
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="bg-primary text-white py-4 shadow-md">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-          <img src="/logo-b.svg" alt="Логотип" className="w-10 h-10" />
-          <span>Python Web</span>
-        </Link>
-        <nav>
-          <ul className="flex space-x-6">
-            <li><Link to="/" className="hover:text-accent-foreground transition">Главная</Link></li>
-            <li><Link to="/" className="hover:text-accent-foreground transition">Инструменты</Link></li>
-            <li><Link to="/" className="hover:text-accent-foreground transition">О проекте</Link></li>
-          </ul>
+    <header className="border-b bg-white">
+      <div className="container flex h-16 items-center justify-between py-4">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
+            <img src="/logo-b.svg" alt="Python" className="h-8 w-8" />
+            <span className="text-xl font-bold text-python-blue">PythonWeb</span>
+          </div>
+        </div>
+        
+        <nav className="hidden md:flex items-center gap-6">
+          <Link to="/" className="text-sm font-medium hover:text-python-blue transition-colors">
+            Главная
+          </Link>
+          <Link to="/" className="text-sm font-medium hover:text-python-blue transition-colors">
+            Фреймворки
+          </Link>
+          <Link to="/" className="text-sm font-medium hover:text-python-blue transition-colors">
+            Уроки
+          </Link>
+          <Link to="/" className="text-sm font-medium hover:text-python-blue transition-colors">
+            Документация
+          </Link>
         </nav>
+        
+        <div className="flex items-center gap-4">
+          <Button className="bg-python-blue hover:bg-python-blue/90">
+            Начать изучение
+          </Button>
+        </div>
       </div>
     </header>
   );
